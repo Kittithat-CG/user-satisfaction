@@ -7,7 +7,7 @@ const FeedbackWidget = () => {
   const [comment, setComment] = useState("");
 
   const handleSubmit = async () => {
-    await axios.post("http://localhost:3000/feedback", {
+    await axios.post("https://user-satisfaction.onrender.com/feedback", {
       user_id: "12345",
       app_name: "Test App",
       rating,
