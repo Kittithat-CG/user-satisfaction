@@ -14,7 +14,7 @@
                     }
             
                     try {
-                        const response = await fetch(`http://localhost:5000/check-feedback/${user_id}`, {
+                        const response = await fetch(`https://user-satisfaction-widget.onrender.com/${user_id}`, {
                             headers: { "Referer": window.location.origin }
                         });
                         const data = await response.json();
