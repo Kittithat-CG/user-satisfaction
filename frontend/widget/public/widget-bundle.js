@@ -14,7 +14,7 @@
                     }
             
                     try {
-                        const response = await fetch(`https://user-satisfaction-widget.onrender.com/${user_id}`, {
+                        const response = await fetch(`https://user-satisfaction.onrender.com/${user_id}`, {
                             headers: { "Referer": window.location.origin }
                         });
                         const data = await response.json();
@@ -108,7 +108,7 @@
                         return;
                         }
                         console.log("🔄 บันทึกเวลา last_dismiss_time...");
-                        await fetch("http://localhost:5000/dismiss-feedback", {
+                        await fetch("https://user-satisfaction.onrender.com/api/feedback", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ user_id, app_id }) // ✅ ใช้ `app_id` จาก API
@@ -132,7 +132,7 @@
             
                         console.log("📤 ส่ง Feedback:", { user_id, rating: selectedRating, comment, referrer });
             
-                        const response = await fetch("http://localhost:5000/feedback", {
+                        const response = await fetch("https://user-satisfaction.onrender.com/api/feedback", {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({ user_id, rating: selectedRating, comment, referrer })
